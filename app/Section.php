@@ -19,4 +19,9 @@ class Section extends Model
     {
     	return $this->belongsTo('App\Article');
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Image');
+    }
 }
