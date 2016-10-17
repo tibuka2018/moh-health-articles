@@ -1,4 +1,5 @@
 <div class="container">
+	<hr>
 	<div class="row">
 		<div class="col-xs-12 col-sm-3">
 			<h3>ABOUT US</h3>
@@ -41,7 +42,9 @@
 			</form>
 		</div>
 	</div>
-	<div class="row">
-		
+	<hr>
+	<div class="row text-center footer-bottom">
+		Copyright &copy;{{ date('Y') }} {{ Config('app.name') }} . All Rights Reserved
 	</div>
+	<hr>
 </div>

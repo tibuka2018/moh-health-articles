@@ -85,5 +85,8 @@ footer {
     color: #FFF; }
   footer ul li a:hover {
     text-decoration: none; }
+  footer .footer-bottom {
+    color: #FFF;
+    padding: 5px; }
 
 /*# sourceMappingURL=app.css.map */
