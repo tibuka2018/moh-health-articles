@@ -1,5 +1,7 @@
 <?php
 
+use App\Article;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$articles = Article::with(['user', 'images', 'sections'])->paginate(6);
+    return view('welcome', compact('articles'));
 });
 
 Auth::routes();

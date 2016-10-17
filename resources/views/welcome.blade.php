@@ -17,32 +17,30 @@
 				{{-- Articles --}}
 				<div class="col-xs-12 col-sm-9">
 					
-				<div class="row">
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <a href="{{ url('articles/1') }}">
-						   	<img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   </a>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         <a href="{{ url('articles/1') }}">Dissident numinous face forwards paranoid human.</a>
-						      </div>
-						      <div class="desc">
-						      	3D-printed courier nano-geodesic euro-pop claymore mine paranoid into...
-						      </div>
-						      <div class="bottom">
-						      	<span class="pull-left">
-						      		{{ date('Y-m-d') }}
-						      	</span>
-						      	<span class="pull-right">35 Views</span>
-						      </div>
-						   </div>
-						</div>						
-					</div>										
-				</div>				
+				@if($articles->count() > 0)
+					@foreach($articles->chunk(3) as $articlesSet)
+						<div class="row">
+							@foreach($articlesSet as $article)
+								<div class="col-xs-12 col-sm-4">
+
+									<div class="card-box">
+										@include('partials.cardbox', ['article' => $article])
+									</div>
+
+								</div>
+							@endforeach
+						</div>
+					@endforeach
+
+					<div class="text-center">
+						{{ $articles->links() }}
+					</div>
+
+				@else
+					<div class="jumbotron text-center">
+						<h1>Empty</h1>
+					</div>
+				@endif			
 
 				</div>
 				{{-- Sidebar --}}
