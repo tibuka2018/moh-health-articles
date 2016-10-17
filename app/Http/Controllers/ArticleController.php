@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Article;
 
+use App\Section;
+
 class ArticleController extends Controller
 {
     /**
@@ -48,9 +50,10 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        return view('articles.show');
+        $article = Article::whereSlug($slug)->with(['user', 'category', 'images', 'sections'])->firstOrFail();
+        return view('articles.show', compact('article', 'section_images'));
     }
 
     /**
