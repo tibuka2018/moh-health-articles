@@ -29,4 +29,9 @@ class Article extends Model
     {
         return $this->hasMany('App\Image');
     }
+
+    public function sections()
+    {
+        return $this->hasMany('App\Section');
+    }
 }

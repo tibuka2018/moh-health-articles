@@ -14,4 +14,9 @@ class Section extends Model
     	'content',
     	'image_id'
     ];
+
+    public function article()
+    {
+    	return $this->belongsTo('App\Article');
+    }
 }
