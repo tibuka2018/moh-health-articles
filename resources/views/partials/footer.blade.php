@@ -3,12 +3,14 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-3">
 			<h3>ABOUT US</h3>
+			<hr>
 			<p>
 				Dead cardboard girl advert dolphin singularity sentient bomb math-receding. Geodesic gang city into computer knife boy concrete paranoid. Free-market physical industrial grade carbon chrome face forwards tiger-team.  
 			</p>
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<h3>QUICK LINKS</h3>
+			<hr>
 			<ul class="list-unstyled">
 				<li><a href="#">Health Facilities</a></li>
 				<li><a href="#">ICT Support</a></li>
@@ -19,6 +21,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<h3>INFORMATION</h3>
+			<hr>
 			<ul class="list-unstyled">
 				<li><a href="#">News</a></li>
 				<li><a href="#">Events Gallery</a></li>
@@ -29,6 +32,7 @@
 		</div>
 		<div class="col-xs-12 col-sm-3">
 			<h3>NEWSLETTER</h3>
+			<hr>
 			<p>
 				Subscribe to our weekly newsletter.
 			</p>
