@@ -14,15 +14,15 @@
 			@include('partials.carousel')
 		</div>
 	{{-- Main --}}
-		<div class="container">
+		<div class="container main">
 			<div class="row">
 				{{-- Articles --}}
-				<div class="col-xs-12 col-sm-10">
+				<div class="col-xs-12 col-sm-9">
 					Articles
 				</div>
 				{{-- Sidebar --}}
-				<div class="col-xs-12 col-sm-2">
-					Sidebar
+				<div class="col-xs-12 col-sm-3">
+					@include('partials.sidebar')
 				</div>
 			</div>
 		</div>
