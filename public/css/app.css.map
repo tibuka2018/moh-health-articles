@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA","file":"app.css","sourcesContent":[]}
+{"version":3,"sources":["components/banner.scss"],"names":[],"mappings":"AAAA;EACC,YAAY;EACZ,cAAc;EACd,mCAAe;EACf,mBAAmB,EACnB","file":"app.css","sourcesContent":[".banner {\r\n\twidth: 100%;\r\n\theight: 100px;\r\n\tbackground: url('/img/banner.png');\r\n\tmargin-bottom: 5px;\r\n}"]}
