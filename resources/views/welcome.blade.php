@@ -2,10 +2,8 @@
 
 @section('content')
 	{{-- banner --}}
-	<div class="banner">
-		<div class="container">
-			@include('partials.banner')
-		</div>
+	<div class="container">
+		@include('partials.banner')
 	</div>
 	{{-- Navbar --}}
 		@include('partials.navbar')
