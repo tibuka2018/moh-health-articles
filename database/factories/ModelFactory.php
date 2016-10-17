@@ -48,7 +48,9 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
 $factory->define(App\Image::class, function (Faker\Generator $faker) {
     return [
         'user_id' => $faker->numberBetween(1, 10),
-        'url' => $faker->imageUrl(800, 600, 'nature')
+        'url' => $faker->imageUrl(800, 600, 'nature'),
+        'article_id' => $faker->numberBetween(1, 10),
+        'section_id' => $faker->numberBetween(1, 20)
     ];
 });
 
