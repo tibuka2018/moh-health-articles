@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>moh</title>
-        
-    </head>
-    <body>
-        <h1>Comming Soon!</h1>
-    </body>
-</html>
+@section('content')
+	{{-- banner --}}
+	<div class="banner">
+		<div class="container">
+			@include('partials.banner')
+		</div>
+	</div>
+	{{-- Navbar --}}
+		@include('partials.navbar')
+	{{-- Corousel --}}
+		<div class="container">
+			@include('partials.carousel')
+		</div>
+	{{-- Main --}}
+		<div class="container">
+			<div class="row">
+				{{-- Articles --}}
+				<div class="col-xs-12 col-sm-10">
+					Articles
+				</div>
+				{{-- Sidebar --}}
+				<div class="col-xs-12 col-sm-2">
+					Sidebar
+				</div>
+			</div>
+		</div>
+	
+
+@endsection
