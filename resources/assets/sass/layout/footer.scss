@@ -1,0 +1,27 @@
+footer {
+	background: #333;
+	h3 {
+		color: #FFF;
+		font-weight: italic;
+	}
+	p {
+		color: #FFF;
+	}
+
+	ul {
+		li {
+			a {
+				color: #FFF;
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.footer-bottom {
+		color: #FFF;
+		padding: 5px;
+	}
+}

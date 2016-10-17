@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 /*!
@@ -5765,5 +5766,114 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+=======
+.banner {
+  width: 100%;
+  height: 100px;
+  background: url("/img/banner.png");
+  margin-bottom: 5px; }
+
+.card {
+  padding-top: 20px;
+  margin: 0 0 20px 0;
+  background-color: #ffffff;
+  border: 1px solid #d8d8d8;
+  border-top-width: 0;
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  box-shadow: none;
+  box-sizing: border-box; }
+
+.card.hovercard {
+  position: relative;
+  width: 100%;
+  padding-top: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff; }
+
+.card.hovercard img {
+  width: 100%;
+  height: 80%; }
+
+.card.hovercard .avatar {
+  position: relative;
+  top: -40px;
+  margin-bottom: -40px; }
+
+.card.hovercard .avatar img {
+  width: 80px;
+  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 50%; }
+
+.card.hovercard .info {
+  padding: 4px 8px 10px; }
+
+.card.hovercard .info .title {
+  margin-bottom: 4px;
+  font-size: 24px;
+  line-height: 1;
+  color: #262626;
+  vertical-align: middle; }
+
+.card.hovercard .info .desc {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 20px;
+  color: #737373;
+  text-overflow: ellipsis; }
+
+.card.hovercard .bottom {
+  padding-top: 20px;
+  margin-bottom: 20px; }
+
+.card.people .card-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  line-height: 29px;
+  text-align: center;
+  box-sizing: border-box; }
+
+.main {
+  margin-top: 20px; }
+
+footer {
+  background: #333; }
+  footer h3 {
+    color: #FFF;
+    font-weight: italic; }
+  footer p {
+    color: #FFF; }
+  footer ul li a {
+    color: #FFF; }
+  footer ul li a:hover {
+    text-decoration: none; }
+  footer .footer-bottom {
+    color: #FFF;
+    padding: 5px; }
+
+.article-single {
+  margin-bottom: 50px; }
+  .article-single .article-img {
+    height: 400px; }
+  .article-single .content .table-of-contents ul li a {
+    font-size: 18px; }
+  .article-single .content section h2 {
+    color: #333; }
+  .article-single .content section p {
+    text-align: justify;
+    padding: 5px;
+    font-size: 18px;
+    color: grey;
+    text-indent: 50px; }
+  .article-single .content section .section-img {
+    height: 200px; }
+>>>>>>> show-a-single-article
 
 /*# sourceMappingURL=app.css.map */
