@@ -1,0 +1,45 @@
+@extends('layouts.app')
+
+@section('title', 'Articles')
+
+@section('content')
+
+    {{-- Navbar --}}
+    @include('partials.navbar')
+
+    <div class="container main">
+    	<div class="row">
+    		<div class="col-xs-12 col-sm-12">
+			
+				@if($articles->count() > 0)
+					@foreach($articles->chunk(3) as $articlesSet)
+						<div class="row">
+							@foreach($articlesSet as $article)
+								<div class="col-xs-12 col-sm-4">
+
+							      	@foreach($article->images as $image)
+							      		@if($image->url != null)
+											<?php $image_url = $image->url; ?>
+											<?php break; ?>
+										@endif
+							      	@endforeach
+
+									<div class="card-box">
+										@include('partials.cardbox', ['article' => $article])
+									</div>
+
+								</div>
+							@endforeach
+						</div>
+					@endforeach
+				@else
+					<div class="jumbotron text-center">
+						<h1>Empty</h1>
+					</div>
+				@endif
+
+    		</div>
+    	</div>
+    </div>
+
+@endsection

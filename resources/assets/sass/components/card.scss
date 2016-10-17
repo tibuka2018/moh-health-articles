@@ -24,6 +24,10 @@
   overflow: hidden;
   text-align: center;
   background-color: #fff;
+
+  .card-image {
+    height: 200px;
+  }
 }
 
 .card.hovercard img {
@@ -31,28 +35,9 @@
   height: 80%;
 }
 
-.card.hovercard .avatar {
-  position: relative;
-  top: -40px;
-  margin-bottom: -40px;
-}
-
-.card.hovercard .avatar img {
-  width: 80px;
-  height: 80px;
-  max-width: 80px;
-  max-height: 80px;
-  -webkit-border-radius: 50%;
-     -moz-border-radius: 50%;
-          border-radius: 50%;
-}
-
-.card.hovercard .info {
-  padding: 4px 8px 10px;
-}
-
 .card.hovercard .info .title {
   margin-bottom: 4px;
+  margin-top: 12px;
   font-size: 24px;
   line-height: 1;
   color: #262626;
@@ -67,23 +52,6 @@
   text-overflow: ellipsis;
 }
 
-.card.hovercard .bottom {
-  padding : {
-    top: 20px;
-  }
-  margin-bottom: 20px;
-}
-
-.card.people .card-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  padding: 10px 20px;
-  line-height: 29px;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+.card.hovercard.card-bottom {
+  background-color: #000;
 }
