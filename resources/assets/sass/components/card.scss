@@ -68,8 +68,10 @@
 }
 
 .card.hovercard .bottom {
-  padding: 0 20px;
-  margin-bottom: 17px;
+  padding : {
+    top: 20px;
+  }
+  margin-bottom: 20px;
 }
 
 .card.people .card-bottom {

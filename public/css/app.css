@@ -57,8 +57,8 @@
   text-overflow: ellipsis; }
 
 .card.hovercard .bottom {
-  padding: 0 20px;
-  margin-bottom: 17px; }
+  padding-top: 20px;
+  margin-bottom: 20px; }
 
 .card.people .card-bottom {
   position: absolute;
@@ -88,5 +88,22 @@ footer {
   footer .footer-bottom {
     color: #FFF;
     padding: 5px; }
+
+.article-single {
+  margin-bottom: 50px; }
+  .article-single .article-img {
+    height: 400px; }
+  .article-single .content .table-of-contents ul li a {
+    font-size: 18px; }
+  .article-single .content section h2 {
+    color: #333; }
+  .article-single .content section p {
+    text-align: justify;
+    padding: 5px;
+    font-size: 18px;
+    color: grey;
+    text-indent: 50px; }
+  .article-single .content section .section-img {
+    height: 200px; }
 
 /*# sourceMappingURL=app.css.map */

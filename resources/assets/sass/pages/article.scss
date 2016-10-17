@@ -1,0 +1,36 @@
+.article-single {
+	margin : {
+		bottom: 50px;
+	}
+
+	.article-img {
+		height: 400px;
+	}
+
+	.content {
+		.table-of-contents {
+			ul {
+				li {
+					a {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+		section {
+			h2 {
+				color: #333;
+			}
+			p {
+				text-align: justify;
+				padding: 5px;
+				font-size: 18px;
+				color: grey;
+				text-indent: 50px;
+			}
+			.section-img {
+				height: 200px;
+			}
+		}
+	}
+}

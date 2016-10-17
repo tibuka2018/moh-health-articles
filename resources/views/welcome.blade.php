@@ -20,105 +20,25 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-4">
 						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
+						   <a href="{{ url('articles/1') }}">
+						   	<img src="http://lorempixel.com/300/200/nature/1" alt=""/>
+						   </a>
 						   <div class="avatar">
 						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
 						   </div>
 						   <div class="info">
 						      <div class="title">
-						         The Title
+						         <a href="{{ url('articles/1') }}">Dissident numinous face forwards paranoid human.</a>
 						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
-						   </div>
-						</div>						
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         The Title
+						      <div class="desc">
+						      	3D-printed courier nano-geodesic euro-pop claymore mine paranoid into...
 						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
-						   </div>
-						</div>						
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         The Title
+						      <div class="bottom">
+						      	<span class="pull-left">
+						      		{{ date('Y-m-d') }}
+						      	</span>
+						      	<span class="pull-right">35 Views</span>
 						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
-						   </div>
-						</div>						
-					</div>										
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         The Title
-						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
-						   </div>
-						</div>						
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         The Title
-						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
-						   </div>
-						</div>						
-					</div>
-					<div class="col-xs-12 col-sm-4">
-						<div class="card hovercard">
-						   <img src="http://lorempixel.com/300/200/nature/1" alt=""/>
-						   <div class="avatar">
-						      <img src="http://lorempixel.com/80/80/nature/1" alt="" />
-						   </div>
-						   <div class="info">
-						      <div class="title">
-						         The Title
-						      </div>
-						      <div class="desc">Lorem ipsum</div>
-						   </div>
-						   <div class="bottom">
-						      <button class="btn btn-default">Button</button>
 						   </div>
 						</div>						
 					</div>										
