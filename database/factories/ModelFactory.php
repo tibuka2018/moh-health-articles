@@ -33,3 +33,14 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
         'image_id' => $faker->numberBetween(1, 10)
     ];
 });
+
+$factory->define(App\Category::class, function (Faker\Generator $faker) {
+    $name = $faker->sentence;
+    $slug = str_slug($name, '-');
+    return [
+        'user_id' => $faker->numberBetween(1, 10),
+        'name' => $name,
+        'slug' => $slug,
+        'color' => $faker->hexcolor
+    ];
+});
