@@ -1,6 +1,19 @@
 <div class="card hovercard">
-   <div class="card-image" style="background-image: url('{{ $image_url }}')">
-   </div>
+   @if($article->images->count() > 0)
+      @foreach($article->images as $image)
+         @if($image !== null)
+            <div class="card-image" style="background-image: url('{{ $image->url }}')">
+            </div>
+            <?php break; ?>
+         @endif
+      @endforeach
+   @else
+      {{--
+         TODO: Place a proper image
+       --}}
+      <div class="card-image" style="background-image: url('http://lorempixel.com/800/600/nature/?53379')">
+      </div>
+   @endif
    <div class="info">
       <div class="title">
          <a href="{{ url('articles/' . $article->slug) }}">{{ $article->title }}</a>

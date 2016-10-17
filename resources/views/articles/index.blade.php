@@ -17,13 +17,6 @@
 							@foreach($articlesSet as $article)
 								<div class="col-xs-12 col-sm-4">
 
-							      	@foreach($article->images as $image)
-							      		@if($image->url != null)
-											<?php $image_url = $image->url; ?>
-											<?php break; ?>
-										@endif
-							      	@endforeach
-
 									<div class="card-box">
 										@include('partials.cardbox', ['article' => $article])
 									</div>
@@ -32,6 +25,11 @@
 							@endforeach
 						</div>
 					@endforeach
+
+					<div class="text-center">
+						{{ $articles->links() }}
+					</div>
+
 				@else
 					<div class="jumbotron text-center">
 						<h1>Empty</h1>
