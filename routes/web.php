@@ -40,7 +40,8 @@ Route::patch('sections/{id}', 'SectionController@update');
 
 Route::get('images/{filename}', function ($filename)
 {
-    $path = storage_path() . '/' . $filename;
+    $slash = "\\";
+    $path = storage_path() . $slash . $filename;
 
     return $path;
 

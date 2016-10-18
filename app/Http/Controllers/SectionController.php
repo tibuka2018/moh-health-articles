@@ -38,11 +38,13 @@ class SectionController extends Controller
     		if ($request->hasFile('image')) {
     			// upload that image
 
-	            $path = $request->image->store('images');
+                $imageName = time().'.'.$request->image->getClientOriginalExtension();
+
+                $request->image->move(public_path('images'), $imageName);
 
 	            $image = new Image();
 	            $image->user_id = Auth::user()->id;
-	            $image->url = $path;
+	            $image->url = $imageName;
 	            $image->save();
 
 	            // insert that section
@@ -80,11 +82,13 @@ class SectionController extends Controller
     		if ($request->hasFile('image')) {
     			// upload that image
 
-	            $path = $request->image->store('images');
+                $imageName = time().'.'.$request->image->getClientOriginalExtension();
+
+                $request->image->move(public_path('images'), $imageName);
 
 	            $image = new Image();
 	            $image->user_id = Auth::user()->id;
-	            $image->url = $path;
+	            $image->url = $imageName;
 	            $image->save();
 
 	            // insert that section
@@ -135,11 +139,13 @@ class SectionController extends Controller
     		if ($request->hasFile('image')) {
     			// upload that image
 
-	            $path = $request->image->store('images');
+                $imageName = time().'.'.$request->image->getClientOriginalExtension();
+
+                $request->image->move(public_path('images'), $imageName);
 
 	            $image = new Image();
 	            $image->user_id = Auth::user()->id;
-	            $image->url = $path;
+	            $image->url = $imageName;
 	            $image->save();
 
 	            // insert that section

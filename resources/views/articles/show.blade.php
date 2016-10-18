@@ -15,8 +15,8 @@
 					{{-- image --}}
 					@if($article->images->count() > 0)
 						@foreach($article->images as $image)
-							<div class="article-img" style="background-image: url('{{ $image->url }}')">
-							</div>
+							<div class="article-img" style="background-image: url('{{ url('images/' . $image->url) }}')">
+							&nbsp;</div>
 							<?php break; ?>
 						@endforeach
 					@else
@@ -58,7 +58,9 @@
 									<h2>{{ $section->title }}</h2>
 									@if($section->images->count() > 0)
 										@foreach($section->images as $image)
-											<a href="{{ url($image->url) }}">Image</a>
+											<a href="{{ url('images/' . $image->url) }}">
+												<img src="{{ url('images/' . $image->url) }}" alt="{{ $section->title }}">
+											</a>
 										@endforeach
 									@endif
 									<p>

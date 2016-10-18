@@ -25,7 +25,8 @@ class CreateANewSectionRequest extends FormRequest
     {
         return [
             'title' =>  'required',
-            'content'   =>  'required'
+            'content'   =>  'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

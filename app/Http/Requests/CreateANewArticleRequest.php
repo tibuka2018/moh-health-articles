@@ -25,7 +25,8 @@ class CreateANewArticleRequest extends FormRequest
     {
         return [
             'title' =>  'required',
-            'category' => 'required'
+            'category' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }
