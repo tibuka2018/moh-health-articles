@@ -7,9 +7,6 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2">
-            
-        </div>
         <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
@@ -64,6 +61,23 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Statistics</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tbody>
+                            <tr>
+                                <th>Articles</th>
+                                <td>{{ $article->count() }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>        
     </div>
 </div>
 @endsection
