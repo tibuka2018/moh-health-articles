@@ -11,7 +11,7 @@
     <!-- Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
-    <title>@yield('title')</title>
+    <title>@if(Request::is('/')) {{ config('app.name') }} @endif @yield('title')</title>
 
     <!-- Styles -->
     <link href="/twbs/css/bootstrap.min.css" rel="stylesheet">
