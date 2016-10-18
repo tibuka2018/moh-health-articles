@@ -12,7 +12,7 @@
         @endif
     </div>
 </div>
-<div class="form-group{{ $errors->has('category') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('category') ? ' has-error ' : '' }}">
     <label for="category" class="col-sm-2 control-label">Category</label>
     <div class="col-sm-5">
         <select name="category" id="category" class="form-control">
@@ -29,13 +29,13 @@
             @else
                 <option value="">Empty</option>
             @endif
-            @if($errors->has('category'))
-                <span id="categoryErrorStatus" class="sr-only">(error)</span>
-                <span class="help-block">
+        </select>
+        @if($errors->has('category'))
+            <span id="categoryErrorStatus" class="sr-only">(error)</span>
+            <span class="help-block">
 				<strong>{{ $errors->first('category') }}</strong>
 			</span>
-            @endif
-        </select>
+        @endif
     </div>
     <div class="col-sm-5">
         <a href="{{ url('categories/create') }}" class="btn btn-link">New</a>
