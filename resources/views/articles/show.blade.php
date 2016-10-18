@@ -15,8 +15,9 @@
 					{{-- image --}}
 					@if($article->images->count() > 0)
 						@foreach($article->images as $image)
-							<div class="article-img" style="background-image: url('{{ url('images/' . $image->url) }}')">
-							&nbsp;</div>
+							<a href="{{ url('images/' . $image->url) }}">
+								<img src="{{ url('images/' . $image->url) }}" class="img-responsive" alt="{{ $article->title }}">
+							</a>
 							<?php break; ?>
 						@endforeach
 					@else
@@ -59,7 +60,7 @@
 									@if($section->images->count() > 0)
 										@foreach($section->images as $image)
 											<a href="{{ url('images/' . $image->url) }}">
-												<img src="{{ url('images/' . $image->url) }}" alt="{{ $section->title }}">
+												<img src="{{ url('images/' . $image->url) }}" class="img-responsive" alt="{{ $section->title }}">
 											</a>
 										@endforeach
 									@endif
