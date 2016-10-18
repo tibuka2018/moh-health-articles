@@ -55,6 +55,11 @@
 						@if($article->sections->count() > 0)
 							@foreach($article->sections as $section)
 								<section id="{{ $section->slug }}">
+									@if($section->images->count() > 0)
+										@foreach($section->images as $image)
+											<a href="{{ url($image->url) }}">Image</a>
+										@endforeach
+									@endif
 									<h2>{{ $section->title }}</h2>
 									<p>
 										{{ $section->content }} 

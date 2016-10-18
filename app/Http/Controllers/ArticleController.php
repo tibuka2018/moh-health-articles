@@ -96,10 +96,10 @@ class ArticleController extends Controller
      */
     public function show($slug)
     {
-        $article = Article::whereSlug($slug)->with(['user', 'category', 'images', 'sections'])->firstOrFail();
+        $article = Article::with(['user', 'category', 'images', 'sections'])->whereSlug($slug)->firstOrFail();
         // TODO View composers
-        $latest_articles = Article::with('user')->orderBy('created_at', 'desc')->take(5)->get();        
-        return view('articles.show', compact('article', 'section_images', 'latest_articles'));
+        $latest_articles = Article::with('user')->orderBy('created_at', 'desc')->take(5)->get();
+        return view('articles.show', compact('article', 'latest_articles'));
     }
 
     /**
@@ -108,7 +108,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($slug)
+    public function edit($slug) 
     {
         $article = Article::with(['category', 'sections', 'images'])->whereSlug($slug)->whereUserId(Auth::user()->id)->firstOrFail();
         $categories = Category::all();
