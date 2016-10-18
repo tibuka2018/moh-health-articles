@@ -26,9 +26,15 @@
 	</div>
 </div>
 
-<div class="form-group">
+<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
 	<label for="image" class="col-sm-2 control-label">Image (Optional)</label>
 	<div class="col-sm-10">
 		<input type="file" name="image">
+		@if($errors->has('image'))
+			<span id="categoryErrorStatus" class="sr-only">(error)</span>
+			<span class="help-block">
+				<strong>{{ $errors->first('image') }}</strong>
+			</span>
+		@endif
 	</div>
 </div>
