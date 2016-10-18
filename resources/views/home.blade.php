@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home')
+
 @section('content')
 
 {{-- Navbar --}}
@@ -46,8 +48,17 @@
                                             <td>{{ $article->created_at->diffForHumans() }}</td>
                                             <td>{{ $article->updated_at->diffForHumans() }}</td>
                                             <td>{{ $article->views }}</td>
-                                            <td><a href="{{ url('articles/' . $article->slug . '/edit') }}"><i class="fa fa-edit"></i></a></td>
-                                            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                            <td><a href="{{ url('articles/' . $article->slug . '/edit') }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a></td>
+                                            <td>
+                                                <form action="{{ url('articles/'.$article->id) }}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-btn fa-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
