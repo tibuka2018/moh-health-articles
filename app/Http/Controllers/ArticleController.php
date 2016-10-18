@@ -149,6 +149,11 @@ class ArticleController extends Controller
             $article->category_id = $request->input('category');
             $article->save();
 
+            // connect that image and article
+            $image = Image::find($image->id);
+            $image->article_id = $article->id;
+            $image->save();            
+
             return redirect('home');
         } else {
             $article->user_id   =  Auth::user()->id;
