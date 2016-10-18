@@ -71,9 +71,11 @@ class VideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $video = Video::with('category')->whereSlug($slug)->first();
+        $categories = Category::all();
+        return view('videos.edit', compact('video', 'categories'));
     }
 
     /**
@@ -83,9 +85,18 @@ class VideoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateVideoRequest $request, $id)
     {
-        //
+        $video = Video::findOrFail($id);
+        $video->user_id = Auth::user()->id;
+        $video->title = $request->input('title');
+        $video->slug = str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+        $video->description = $request->input('description');
+        $video->url = $request->input('url');
+        $video->category_id = $request->input('category');
+        $video->save();
+
+        return redirect('home');
     }
 
     /**

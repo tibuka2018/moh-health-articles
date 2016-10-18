@@ -12,7 +12,7 @@
                 <option value="">-Select-</option>
                 @foreach($categories as $category)
                     <option value="{{ $category->id }}"
-                            @if(isset($article))  @if($category->id == $article->category->id) selected="selected" @endif  @endif>{{ $category->name }}</option>
+                            @if(isset($video))  @if($category->id == $video->category->id) selected="selected" @endif  @endif>{{ $category->name }}</option>
                 @endforeach
             @else
                 <option value="">Empty</option>
