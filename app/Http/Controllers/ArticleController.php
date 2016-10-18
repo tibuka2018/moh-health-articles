@@ -97,7 +97,9 @@ class ArticleController extends Controller
     public function show($slug)
     {
         $article = Article::whereSlug($slug)->with(['user', 'category', 'images', 'sections'])->firstOrFail();
-        return view('articles.show', compact('article', 'section_images'));
+        // TODO View composers
+        $latest_articles = Article::with('user')->orderBy('created_at', 'desc')->take(5)->get();        
+        return view('articles.show', compact('article', 'section_images', 'latest_articles'));
     }
 
     /**

@@ -45,7 +45,21 @@
 				</div>
 				{{-- Sidebar --}}
 				<div class="col-xs-12 col-sm-3">
-					@include('partials.sidebar')
+					@if($latest_articles->count() > 0)
+						<div class="side-bar">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Latest Articles</h3>
+								</div>
+								<div class="panel-body">
+									@each('partials.sidebar', $latest_articles, 'latest_articles')
+								</div>
+								<div class="panel-footer">
+									<a href="{{ url('articles') }}">View All</a>
+								</div>
+							</div>	
+						</div>					
+					@endif
 				</div>
 			</div>
 		</div>

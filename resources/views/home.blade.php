@@ -71,7 +71,7 @@
                         <tbody>
                             <tr>
                                 <th>Articles</th>
-                                <td>{{ $article->count() }}</td>
+                                <td>{{ $articles->count() }}</td>
                             </tr>
                         </tbody>
                     </table>
