@@ -27,3 +27,5 @@ Route::resource('articles', 'ArticleController');
 Route::get('articles/{articleId}/sections/new', 'SectionController@newSection');
 
 Route::post('sections', 'SectionController@store');
+
+Route::resource('categories', 'CategoryController');

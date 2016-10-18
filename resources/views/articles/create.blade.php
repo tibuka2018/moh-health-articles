@@ -39,6 +39,9 @@
 										@endforeach
 									</select>
 								</div>
+								<div class="col-sm-5">
+									<a href="{{ url('categories/create') }}" class="btn btn-link">New</a>
+								</div>
 							</div>
 
 							<div class="form-group">
