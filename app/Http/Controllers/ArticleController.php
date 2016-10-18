@@ -171,8 +171,12 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Article $article)
     {
-        //
+        $this->authorize('destroy', $article);
+
+        $article->delete();
+
+        return redirect('/home');
     }
 }
