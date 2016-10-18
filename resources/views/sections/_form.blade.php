@@ -15,9 +15,7 @@
 <div class="form-group{{ $errors->has('content') ? ' has-error ' : '' }} has-feedback">
 	<label for="content" class="col-sm-2 control-label">Section Content</label>
 	<div class="col-sm-10">
-		<textarea name="content" id="content" rows="10" class="form-control" aria-describedby="contentErrorStatus">
-			{{ isset($section->content) ? $section->content : '' }}
-		</textarea>
+		<textarea name="content" id="content" rows="10" class="form-control" aria-describedby="contentErrorStatus">{{ isset($section->content) ? $section->content : old('content') }}</textarea>
 		@if($errors->has('content'))
 		    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
 		    <span id="contentErrorStatus" class="sr-only">(error)</span>		
