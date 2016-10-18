@@ -55,28 +55,30 @@ class ArticleController extends Controller
             // upload that image
 
             $path = $request->image->store('images');
+
             $image = new Image();
             $image->user_id = Auth::user()->id;
             $image->url = $path;
             $image->save();
 
             // insert that article
-            Article::create([
-                'user_id'   =>  Auth::user()->id,
-                'title'     =>  $request->input('title'),
-                'slug'      =>  str_slug($request->input('title') . ' ' . Auth::user()->id, '-'),
-                'image_id'  => $image->id,
-                'category_id' => $request->input('category')
-            ]);
-            return redirect('articles/create');
+            $article = new Article();
+            $article->user_id   =  Auth::user()->id;
+            $article->title     =  $request->input('title');
+            $article->slug      =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+            $article->image_id  = $image->id;
+            $article->category_id = $request->input('category');
+            $article->save();
+
+            return redirect('articles/' . $article->id . '/sections/new');
         } else {
-            Article::create([
-                'user_id'   =>  Auth::user()->id,
-                'title'     =>  $request->input('title'),
-                'slug'      =>  str_slug($request->input('title') . ' ' . Auth::user()->id, '-'),
-                'category_id' => $request->input('category')
-            ]);
-            return redirect('articles/create');
+            $article = new Article();
+            $article->user_id   =  Auth::user()->id;
+            $article->title     =  $request->input('title');
+            $article->slug      =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+            $article->category_id = $request->input('category');
+            $article->save();
+            return redirect('articles/' . $article->id . '/sections/new');
         }
     }
 

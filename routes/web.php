@@ -23,3 +23,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('articles', 'ArticleController');
+
+Route::get('articles/{articleId}/sections/new', 'SectionController@newSection');
