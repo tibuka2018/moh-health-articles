@@ -30,7 +30,7 @@
 
 							<div class="form-group">
 								<label for="color" class="col-sm-2 control-label">Color</label>
-								<div class="col-sm-2">
+								<div class="col-sm-1">
 									<input type="color" name="color" id="color" value="#2955D9" class="form-control" placeholder="Category Name"> 
 								</div>
 							</div>							
@@ -52,11 +52,11 @@
 				</div>
 				<div class="panel-body">
 					@if($categories->count() > 0)
-						<ol>
+						<ul class="list-unstyled">
 							@foreach($categories as $category)
-								<li><a href="{{ url('category/' . $category->slug) }}">{{ $category->name }}</a></li>
+								<li><span style="background-color: {{ $category->color }}">&nbsp;</span> <a href="{{ url('categories/' . $category->slug) }}">{{ $category->name }}</a></li>
 							@endforeach
-						</ol>
+						</ul>	
 					@else
 						No category
 					@endif
