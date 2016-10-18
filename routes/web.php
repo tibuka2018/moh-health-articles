@@ -54,3 +54,5 @@ Route::get('images/{filename}', function ($filename)
 
     return $response;
 });
+
+Route::resource('videos', 'VideoController');

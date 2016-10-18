@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Video;
 use Illuminate\Http\Request;
 
 use App\Article;
@@ -27,7 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     { 
-        $articles = Article::whereUserId(Auth::user()->id)->get();
-        return view('home', compact('articles'));
+        $articles = Article::whereUserId(Auth::user()->id)->paginate(10);
+        $videos = Video::with('category')->whereUserId(Auth::user()->id)->paginate(10);
+        return view('home', compact('articles', 'videos'));
     }
 }

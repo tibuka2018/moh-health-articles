@@ -18,6 +18,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url('articles') }}">Articles</a></li>
+                <li><a href="{{ url('videos') }}">Videos</a></li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
