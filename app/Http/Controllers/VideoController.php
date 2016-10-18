@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CreateVideoRequest;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -36,10 +37,10 @@ class VideoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateVideoRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateVideoRequest $request)
     {
         $video = new Video();
         $video->user_id = Auth::user()->id;
