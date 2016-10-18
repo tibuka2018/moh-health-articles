@@ -51,6 +51,9 @@
 .main {
   margin-top: 20px; }
 
+.jumbotron-message {
+  background: #FFF; }
+
 footer {
   background: #333; }
   footer h3 {

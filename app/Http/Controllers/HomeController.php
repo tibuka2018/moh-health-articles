@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Article;
+
+use Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -22,7 +26,8 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    { 
+        $articles = Article::whereUserId(Auth::user()->id)->get();
+        return view('home', compact('articles'));
     }
 }
