@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-2">
-            bs3-pan
+            
         </div>
         <div class="col-md-10">
             <div class="panel panel-default">
