@@ -12,6 +12,8 @@ use App\Section;
 
 use App\category;
 
+use App\Http\Requests\CreateANewArticleRequest;
+
 class ArticleController extends Controller
 {
     /**
@@ -42,9 +44,14 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateANewArticleRequest $request)
     {
-        //
+        // check if a user has submited a file
+        if($request->hasFile('image')) {
+            return 'file';
+        } else {
+            return 'no file';
+        }
     }
 
     /**
