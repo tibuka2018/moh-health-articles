@@ -66,3 +66,16 @@ $factory->define(App\Section::class, function (Faker\Generator $faker) {
         'image_id' => $faker->numberBetween(1, 10)
     ];
 });
+
+$factory->define(App\Video::class, function (Faker\Generator $faker) {
+    $title = $faker->realText(30);
+    $slug = str_slug($title, '-');
+    return [
+        'user_id' => 1,
+        'title' => $title,
+        'slug' => $slug,
+        'description' => $faker->realText(800, 2),
+        'url' => 'https://www.youtube.com/embed/XGSy3_Czz8k',
+        'category_id' => 1
+    ];
+});
