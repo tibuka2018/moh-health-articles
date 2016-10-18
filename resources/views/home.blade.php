@@ -35,7 +35,7 @@
                                         <th>Created</th>
                                         <th>Last Updated</th>
                                         <th>Views</th>
-                                        <th colspan="2"><i class="fa fa-cog"></i></th>
+                                        <th colspan="2" class="text-center"><i class="fa fa-cog"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +49,7 @@
                                             <td>{{ $article->created_at->diffForHumans() }}</td>
                                             <td>{{ $article->updated_at->diffForHumans() }}</td>
                                             <td>{{ $article->views }}</td>
-                                            <td><a href="#"><i class="fa fa-edit"></i></a></td>
+                                            <td><a href="{{ url('articles/' . $article->slug . '/edit') }}"><i class="fa fa-edit"></i></a></td>
                                             <td><a href="#"><i class="fa fa-trash"></i></a></td>
                                         </tr>
                                     @endforeach

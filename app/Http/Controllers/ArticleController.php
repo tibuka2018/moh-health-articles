@@ -10,7 +10,7 @@ use App\Article;
 
 use App\Section;
 
-use App\category;
+use App\Category;
 
 use App\Http\Requests\CreateANewArticleRequest;
 
@@ -100,9 +100,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $article = Article::whereSlug($slug)->whereUserId(Auth::user()->id)->with(['category', 'sections'])->firstOrFail();
+        $categories = Category::all();
+        return view('articles.edit', compact('article', 'categories'));
     }
 
     /**
@@ -114,7 +116,35 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::findOrFail($id);
+        // check if a user has submited a file
+        if($request->hasFile('image')) {
+            // upload that image
+
+            $path = $request->image->store('images');
+
+            $image = new Image();
+            $image->user_id = Auth::user()->id;
+            $image->url = $path;
+            $image->save();
+
+            // insert that article
+            $article->user_id   =  Auth::user()->id;
+            $article->title     =  $request->input('title');
+            $article->slug      =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+            $article->image_id  = $image->id;
+            $article->category_id = $request->input('category');
+            $article->save();
+
+            return redirect('home');
+        } else {
+            $article->user_id   =  Auth::user()->id;
+            $article->title     =  $request->input('title');
+            $article->slug      =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+            $article->category_id = $request->input('category');
+            $article->save();
+            return redirect('home');
+        }        
     }
 
     /**
