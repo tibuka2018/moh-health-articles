@@ -33,7 +33,7 @@
 								<label for="category" class="col-sm-2 control-label">Category</label>
 								<div class="col-sm-5">
 									<select name="category" id="category" class="form-control">
-										<option value="1">Uncategorised</option>
+										<option value="0">Uncategorised</option>
 										@foreach($categories as $category)
 											<option value="{{ $category->id }}">{{ $category->name }}</option>
 										@endforeach
@@ -50,7 +50,7 @@
 
                       		<div class="form-group">
                       			<div class="col-sm-10 col-sm-offset-2">
-                      				<button type="submit" class="btn btn-primary">Submit</button>
+                      				<button type="submit" class="btn btn-primary">Next &raquo;</button>
                       			</div>
                       		</div>
 

@@ -14,6 +14,10 @@ use App\category;
 
 use App\Http\Requests\CreateANewArticleRequest;
 
+use Auth;
+
+use App\Image;
+
 class ArticleController extends Controller
 {
     /**
@@ -48,9 +52,31 @@ class ArticleController extends Controller
     {
         // check if a user has submited a file
         if($request->hasFile('image')) {
-            return 'file';
+            // upload that image
+
+            $path = $request->image->store('images');
+            $image = new Image();
+            $image->user_id = Auth::user()->id;
+            $image->url = $path;
+            $image->save();
+
+            // insert that article
+            Article::create([
+                'user_id'   =>  Auth::user()->id,
+                'title'     =>  $request->input('title'),
+                'slug'      =>  str_slug($request->input('title') . ' ' . Auth::user()->id, '-'),
+                'image_id'  => $image->id,
+                'category_id' => $request->input('category')
+            ]);
+            return redirect('articles/create');
         } else {
-            return 'no file';
+            Article::create([
+                'user_id'   =>  Auth::user()->id,
+                'title'     =>  $request->input('title'),
+                'slug'      =>  str_slug($request->input('title') . ' ' . Auth::user()->id, '-'),
+                'category_id' => $request->input('category')
+            ]);
+            return redirect('articles/create');
         }
     }
 
