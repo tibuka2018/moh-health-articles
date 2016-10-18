@@ -37,7 +37,7 @@
 					</div>
 
 				@else
-					<div class="jumbotron text-center">
+					<div class="jumbotron text-center jumbotron-message">
 						<h1>Empty</h1>
 					</div>
 				@endif			
