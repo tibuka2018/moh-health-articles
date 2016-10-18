@@ -1,6 +1,23 @@
 .navbar {
+	background-color: #225180;
 	border-radius: 0;
 	margin : {
 		top: 5px;
 	}
+}
+
+.navbar-default .navbar-nav > li > a  {
+    color: #fff;
+}
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > li:hover,
+.navbar-default .navbar-nav > li:focus {
+ color: #5e5e5e;
+ background-color: #f8f8f8;
+ border-color: #e7e7e7;
 }
