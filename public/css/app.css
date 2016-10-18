@@ -68,7 +68,8 @@ footer {
 .article-single {
   margin-bottom: 50px; }
   .article-single .article-img {
-    height: 400px; }
+    height: 400px;
+    width: 100%; }
   .article-single .content .table-of-contents ul li a {
     font-size: 18px; }
   .article-single .content section h2 {
