@@ -18,6 +18,12 @@ use App\Image;
 
 class SectionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function newSection($articleId)
     {
     	$article = Article::with('sections')->findOrFail($articleId);
