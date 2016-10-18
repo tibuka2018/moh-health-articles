@@ -54,6 +54,9 @@
 .jumbotron-message {
   background: #FFF; }
 
+.navbar {
+  border-radius: 0; }
+
 footer {
   background: #333; }
   footer h3 {

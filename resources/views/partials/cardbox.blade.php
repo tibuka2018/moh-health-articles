@@ -1,30 +1,38 @@
-<div class="card hovercard">
-   @if($article->images->count() > 0)
-      @foreach($article->images as $image)
-         @if($image !== null)
-            <div class="card-image" style="background-image: url('{{ $image->url }}')">
-            </div>
-            <?php break; ?>
-         @endif
-      @endforeach
-   @else
-      {{--
-         TODO: Place a proper image
-       --}}
-      <div class="card-image" style="background-image: url('http://lorempixel.com/800/600/nature/?53379')">
-      </div>
-   @endif
-   <div class="info">
-      <div class="title">
-         <a href="{{ url('articles/' . $article->slug) }}">{{ $article->title }}</a>
-      </div>
+<div class="panel panel-default">
+   <div class="panel-body">
+
+      {{-- Image --}}
+      @if($article->images->count() > 0)
+         {{-- There is image --}}
+         @foreach($article->images as $image)
+            @if($image !== null)
+               {{-- Display the first image --}}
+               {{-- {{ $image->url }} --}}
+               <?php break; ?>
+            @endif
+         @endforeach
+      @else
+         {{-- No image --}}
+         {{-- Display callback image --}}
+      @endif
+
+      {{-- Article title --}}
+      <h3><a href="{{ url('articles/' . $article->slug) }}">{{ $article->title }}</a></h3>
+
+      {{-- Author --}}
+      <p>
+         <small>By {{ $article->user->name }}</small>
+      </p>
+
    </div>
-   <div class="card-bottom">
-   	<span class="pull-left">
-   		{{ $article->created_at->diffForHumans() }}
-   	</span>
-   	<span class="pull-right">
-   		{{ $article->views }} Views
-   	</span>
+   <div class="panel-footer">
+      <div class="row">
+         <div class="col-sm-6 text-left">
+            {{ $article->created_at->diffForHumans() }}
+         </div>
+         <div class="col-sm-6 text-right">
+            {{ $article->views }} Views
+         </div>
+      </div>
    </div>
 </div>
