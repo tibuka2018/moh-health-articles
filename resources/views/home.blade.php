@@ -78,6 +78,9 @@
                             </div>
                         @endif
                     </div>
+                    <div class="panel-footer text-center">
+                    	{{ $articles->links() }}
+                    </div>
                 </div>
 
                 <h1>Videos</h1>
@@ -122,6 +125,9 @@
                                 <h1>No videos</h1>
                             </div>
                         @endif
+                    </div>
+                    <div class="panel-footer text-center">
+                    	{{ $videos->links() }}
                     </div>
                 </div>
 
