@@ -17,10 +17,10 @@
     		<div class="col-xs-12 col-sm-12">
 			
 				@if($articles->count() > 0)
-					@foreach($articles->chunk(3) as $articlesSet)
+					@foreach($articles->chunk(4) as $articlesSet)
 						<div class="row">
 							@foreach($articlesSet as $article)
-								<div class="col-xs-12 col-sm-4">
+								<div class="col-xs-12 col-sm-3">
 
 									<div class="card-box">
 										@include('partials.cardbox', ['article' => $article])

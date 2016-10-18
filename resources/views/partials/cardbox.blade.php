@@ -17,7 +17,7 @@
       @endif
 
       {{-- Article title --}}
-      <h3><a href="{{ url('articles/' . $article->slug) }}">{{ $article->title }}</a></h3>
+      <h3><a href="{{ url('articles/' . $article->slug) }}" title="{{ $article->title }}">{{ str_limit($article->title, 50) }}</a></h3>
 
       {{-- Author --}}
       <p>
