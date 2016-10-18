@@ -27,15 +27,9 @@
 <body>
     <div id="app">
         @yield('content')
-
-        {{-- Footer --}}
-            <footer>
-                @include('partials.footer')
-            </footer>
-        
     </div>        
     <!-- Scripts -->
-    <script src="/js/jquery/jquery.min.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
     <script src="/twbs/js/bootstrap.min.js"></script>
     <script src="/js/app.js"></script>
 </body>
