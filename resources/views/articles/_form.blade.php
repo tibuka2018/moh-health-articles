@@ -8,7 +8,6 @@
 <label for="category" class="col-sm-2 control-label">Category</label>
 <div class="col-sm-5">
 	<select name="category" id="category" class="form-control">
-		<option value="0">Uncategorised</option>
 		@foreach($categories as $category)
 			<option value="{{ $category->id }}" @if(isset($article))  @if($category->id == $article->category->id) selected="selected" @endif  @endif>{{ $category->name }}</option>
 		@endforeach
