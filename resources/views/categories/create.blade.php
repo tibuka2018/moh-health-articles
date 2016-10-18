@@ -21,10 +21,17 @@
 							
 							{{ csrf_field() }}
 
-							<div class="form-group">
+							<div class="form-group{{ $errors->has('name') ? ' has-error ' : '' }} has-feedback">
 								<label for="name" class="col-sm-2 control-label">Name</label>
 								<div class="col-sm-10">
-									<input type="text" name="name" id="name" class="form-control" placeholder="Category Name"> 
+									<input type="text" name="name" id="name" class="form-control" placeholder="Category Name" aria-describedby="nameErrorStatus"> 
+									@if($errors->has('name'))
+									    <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+									    <span id="nameErrorStatus" class="sr-only">(error)</span>		
+										<span class="help-block">
+											<strong>{{ $errors->first('name') }}</strong>
+										</span>
+									@endif									
 								</div>
 							</div>
 
