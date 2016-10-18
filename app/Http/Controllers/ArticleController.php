@@ -127,7 +127,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateANewArticleRequest $request, $id)
     {
         $article = Article::findOrFail($id);
         // check if a user has submited a file
