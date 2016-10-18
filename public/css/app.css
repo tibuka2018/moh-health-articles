@@ -3,7 +3,7 @@
   height: 100px;
   background: url("/img/banner.png") no-repeat center;
   background-size: cover;
-  margin-bottom: 5px; }
+  margin-top: 5px; }
 
 .card {
   padding-top: 20px;
@@ -55,7 +55,8 @@
   background: #FFF; }
 
 .navbar {
-  border-radius: 0; }
+  border-radius: 0;
+  margin-top: 5px; }
 
 footer {
   background: #333; }
