@@ -39,7 +39,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="image" class="col-sm-2 control-label">Image</label>
+								<label for="image" class="col-sm-2 control-label">Image (Optional)</label>
 								<div class="col-sm-10">
 									<input type="file" name="image">
 								</div>
