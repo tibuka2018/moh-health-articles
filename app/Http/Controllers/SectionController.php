@@ -55,6 +55,11 @@ class SectionController extends Controller
 	            $section->image_id = $image->id;
 	            $section->save();
 
+	            // connect that image and section
+	            $image = Image::find($image->id);
+	            $image->section_id = $section->id;
+	            $image->save();	            
+
 	            return redirect('home');
 
     		} else {
@@ -91,6 +96,11 @@ class SectionController extends Controller
 	            $section->content = $request->input('content');
 	            $section->image_id = $image->id;
 	            $section->save();
+
+	            // connect that image and section
+	            $image = Image::find($image->id);
+	            $image->section_id = $section->id;
+	            $image->save();	            
 
 	            return redirect('articles/' . $request->input('article_id') . '/sections/new');
 
@@ -140,6 +150,11 @@ class SectionController extends Controller
 	            $section->content = $request->input('content');
 	            $section->image_id = $image->id;
 	            $section->save();
+
+	            // connect that image and section
+	            $image = Image::find($image->id);
+	            $image->section_id = $section->id;
+	            $image->save();	            
 
 	            return redirect('articles/' . $article->slug . '/edit');
 
