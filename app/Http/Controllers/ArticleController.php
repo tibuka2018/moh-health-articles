@@ -10,6 +10,8 @@ use App\Article;
 
 use App\Section;
 
+use App\category;
+
 class ArticleController extends Controller
 {
     /**
@@ -30,7 +32,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('articles.create', compact('categories'));
     }
 
     /**
