@@ -17,9 +17,7 @@
             <div class="col-xs-12 col-sm-12">
                 <div class="panel panel-default">
                     <div class="panel-body text-center">
-                        <iframe width="630" height="315"
-                                src="{{ $video->url . '?controls=0' }}">
-                        </iframe>
+                        {!! $video->url !!}
                     </div>
                     <div class="panel-footer">
                         <h5><a href="{{ url('videos/' . $video->slug) }}">{{ str_limit($video->title, 50) }}</a></h5>

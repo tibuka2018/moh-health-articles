@@ -16,15 +16,13 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 @if($videos->count() > 0)
-                    @foreach($videos->chunk(3) as $videosSet)
-                        <div class="row">
+                    @foreach($videos->chunk(1) as $videosSet)
+                        <div class="row text-center">
                             @foreach($videosSet as $video)
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-12">
                                     <div class="panel panel-default">
                                     	<div class="panel-body">
-											<iframe width="320" height="235"
-                                            	src="{{ $video->url . '?controls=0' }}">
-                                    		</iframe>
+											{!! $video->url !!}
                                     	</div>
                                     	<div class="panel-footer">
                                     		<h5><a href="{{ url('videos/' . $video->slug) }}">{{ str_limit($video->title, 50) }}</a></h5>

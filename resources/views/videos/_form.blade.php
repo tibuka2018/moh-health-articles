@@ -21,7 +21,7 @@
         @if($errors->has('category'))
             <span id="categoryErrorStatus" class="sr-only">(error)</span>
             <span class="help-block">
-				<strong>{{ $errors->first('url') }}</strong>
+				<strong>{{ $errors->first('category') }}</strong>
 			</span>
         @endif
     </div>
