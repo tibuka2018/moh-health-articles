@@ -26,7 +26,7 @@ class CreateVideoRequest extends FormRequest
         // TODO a valid url is required to be verified
         return [
             'category' => 'required',
-            'url' => 'required',
+            'url' => 'required|url',
         ];
     }
 }
