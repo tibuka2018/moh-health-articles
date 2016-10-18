@@ -75,6 +75,9 @@
 						</div>
 					@endif
 				</div>
+				<div class="panel-footer">
+					<a href="{{ url('articles/' . $article->id . '/sections/new') }}" class="btn btn-primary btn-sm">Add Section</a>
+				</div>
 			</div>
 
 		</div>
