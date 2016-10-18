@@ -29,3 +29,7 @@ Route::get('articles/{articleId}/sections/new', 'SectionController@newSection');
 Route::post('sections', 'SectionController@store');
 
 Route::resource('categories', 'CategoryController');
+
+Route::get('articles/{articleId}/sections/{sectionId}/edit', 'SectionController@editSection');
+
+Route::patch('sections/{id}', 'SectionController@update');

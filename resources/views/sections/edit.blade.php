@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create a new section')
+@section('title', 'Edit ' . $article->title)
 
 @section('content')
 
@@ -14,13 +14,16 @@
 			<h2>{{ $article->title }}</h2>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">New Section</h3>
+					<h3 class="panel-title">Edit {{ $section->title }}</h3>
 				</div>
 				<div class="panel-body">
 					
-                   <form action="{{ url('sections') }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+                   <form action="{{ url('sections/' . $section->id) }}" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
 
-							{{ csrf_field() }}
+							
+							{!! method_field('patch') !!}
+
+							{!! csrf_field() !!}
 
 							<input type="hidden" name="article_id" value="{{ $article->id }}">
 
@@ -28,10 +31,7 @@
 
                       		<div class="form-group">
                       			<div class="col-sm-1 col-sm-offset-2">
-                      				<button type="submit" name="btn_finish" class="btn btn-primary">Finish</button>
-                      			</div>
-                      			<div class="col-sm-2">
-                      				<button type="submit" name="btn_new" class="btn btn-primary">New Section</button>
+                      				<button type="submit" class="btn btn-primary">Update</button>
                       			</div>
                       		</div>
 

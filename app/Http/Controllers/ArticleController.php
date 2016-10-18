@@ -102,7 +102,7 @@ class ArticleController extends Controller
      */
     public function edit($slug)
     {
-        $article = Article::whereSlug($slug)->whereUserId(Auth::user()->id)->with(['category', 'sections'])->firstOrFail();
+        $article = Article::with(['category', 'sections', 'images'])->whereSlug($slug)->whereUserId(Auth::user()->id)->firstOrFail();
         $categories = Category::all();
         return view('articles.edit', compact('article', 'categories'));
     }

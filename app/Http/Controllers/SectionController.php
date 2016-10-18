@@ -63,6 +63,7 @@ class SectionController extends Controller
 
 	            return redirect('home');
     		}
+
     	} else {
 			// check if an image is submitted
     		if ($request->hasFile('image')) {
@@ -100,5 +101,52 @@ class SectionController extends Controller
 	            return redirect('articles/' . $request->input('article_id') . '/sections/new');
     		}
     	}
+    }
+
+    public function editSection($articleId, $sectionId)
+    {
+    	$section = Section::whereId($sectionId)->whereArticleId($articleId)->first();
+    	// TODO Exlude the selected row
+    	$article = Article::with('sections')->whereId($articleId)->first();
+    	return view('sections.edit', compact('section', 'article'));
+    }
+
+    public function update(Request $request, $id)
+    {
+    		$article = Article::whereId($request->input('article_id'))->first();
+    		$section = Section::whereId($id)->first();
+    		// check if an image is submitted
+    		if ($request->hasFile('image')) {
+    			// upload that image
+
+	            $path = $request->image->store('images');
+
+	            $image = new Image();
+	            $image->user_id = Auth::user()->id;
+	            $image->url = $path;
+	            $image->save();
+
+	            // insert that section
+	            $section->user_id = Auth::user()->id;
+	            $section->article_id = $request->input('article_id');
+	            $section->title = $request->input('title');
+	            $section->slug  =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+	            $section->content = $request->input('content');
+	            $section->image_id = $image->id;
+	            $section->save();
+
+	            return redirect('articles/' . $article->slug . '/edit');
+
+    		} else {
+	            // insert that section
+	            $section->user_id = Auth::user()->id;
+	            $section->article_id = $request->input('article_id');
+	            $section->title = $request->input('title');
+	            $section->slug  =  str_slug($request->input('title') . ' ' . Auth::user()->id, '-');
+	            $section->content = $request->input('content');
+	            $section->save();
+
+	            return redirect('articles/' . $article->slug . '/edit');
+    		}
     }
 }
