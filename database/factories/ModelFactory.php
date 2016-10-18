@@ -35,7 +35,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
-    $name = $faker->sentence;
+    $name = $faker->word;
     $slug = str_slug($name, '-');
     return [
         'user_id' => $faker->numberBetween(1, 10),
