@@ -37,7 +37,7 @@
                     @endforeach
                 @else
                     <div class="jumbotron text-center jumbotron-message">
-                        <h1>No videos</h1>
+                        <h1>No video</h1>
                     </div>
                 @endif
             </div>

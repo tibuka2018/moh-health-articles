@@ -9,12 +9,23 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
-                        You are logged in!
+                        <div class="row col-sm-6">
+                            <div class="text-center">
+                                <h2>{{ $articles->count() }}</h2>
+                                <p>Articles</p>
+                            </div>
+                        </div>
+                        <div class="row col-sm-6">
+                            <div class="text-center">
+                                <h2>{{ $videos->count() }}</h2>
+                                <p>Videos</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -74,7 +85,7 @@
                             </div>
                         @else
                             <div class="jumbotron text-center jumbotron-message">
-                                <h2>No article</h2>
+                                <h2>No articles</h2>
                             </div>
                         @endif
                     </div>
@@ -122,7 +133,7 @@
                             </div>
                         @else
                             <div class="jumbotron text-center jumbotron-message">
-                                <h1>No videos</h1>
+                                <h2>No video</h2>
                             </div>
                         @endif
                     </div>
@@ -131,27 +142,6 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="col-md-2">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Statistics</h3>
-                    </div>
-                    <div class="panel-body">
-                        <table class="table table-bordered table-hover">
-                            <tbody>
-                            <tr>
-                                <th>Articles</th>
-                                <td>{{ $articles->count() }}</td>
-                            </tr>
-                            <tr>
-                                <th>Videos</th>
-                                <td>{{ $videos->count() }}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
