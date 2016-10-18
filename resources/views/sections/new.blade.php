@@ -10,11 +10,11 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-9">
 			<h2>{{ $article->title }}</h2>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Section</h3>
+					<h3 class="panel-title">New Section</h3>
 				</div>
 				<div class="panel-body">
 					
@@ -56,6 +56,28 @@
 
                       </form>   
 
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<h2>Sections</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Existing Sections</h3>
+				</div>
+				<div class="panel-body">
+					@if($article->sections->count() > 0)
+						<ol>
+							@foreach($article->sections as $section)
+								<li>{{ $section->title }}</li>
+							@endforeach
+						</ol>
+					@else
+						<p>
+							No section
+						</p>
+					@endif
 				</div>
 			</div>
 		</div>

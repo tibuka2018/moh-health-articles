@@ -20,7 +20,7 @@ class SectionController extends Controller
 {
     public function newSection($articleId)
     {
-    	$article = Article::findOrFail($articleId);
+    	$article = Article::with('sections')->findOrFail($articleId);
     	return view('sections.new', compact('article'));
     }
 
