@@ -69,14 +69,44 @@
                                             <td><a href="{{ url('articles/' . $article->slug . '/edit') }}"
                                                    class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a></td>
                                             <td>
-                                                <form action="{{ url('articles/'.$article->id) }}" method="POST">
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
 
-                                                    <button type="submit" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-btn fa-trash"></i>
-                                                    </button>
-                                                </form>
+                                                <a class="btn btn-danger" data-toggle="modal"
+                                                   href='#{{ $article->id }}'><i class="fa fa-trash"></i></a>
+                                                <div class="modal fade" id="{{ $article->id }}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title">
+                                                                    Deleting {{ $article->title }}</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h3>Are you sure that you want to
+                                                                    delete {{ $article->title }} ?</h3>
+                                                                <p>
+                                                                    This article and its sections will be lost forever.
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <form action="{{ url('articles/'.$article->id) }}"
+                                                                      method="POST">
+                                                                    {{ csrf_field() }}
+                                                                    {{ method_field('DELETE') }}
+
+                                                                    <button type="button" class="btn btn-default"
+                                                                            data-dismiss="modal">Cancel
+                                                                    </button>
+                                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                                        <i class="fa fa-btn fa-trash"></i> Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -90,7 +120,7 @@
                         @endif
                     </div>
                     <div class="panel-footer text-center">
-                    	{{ $articles->links() }}
+                        {{ $articles->links() }}
                     </div>
                 </div>
 
@@ -118,11 +148,15 @@
                                     @foreach($videos as $video)
                                         <tr>
                                             <td>SN</td>
-                                            <td><a href="{{ url('videos/' . $video->slug) }}">{{ $video->title }}</a></td>
-                                            <td><span style="background-color: {{ $video->category->color  }}"></span> {{ $video->category->name }}</td>
+                                            <td><a href="{{ url('videos/' . $video->slug) }}">{{ $video->title }}</a>
+                                            </td>
+                                            <td>
+                                                <span style="background-color: {{ $video->category->color  }}"></span> {{ $video->category->name }}
+                                            </td>
                                             <td>{{ $video->created_at }}</td>
                                             <td>{{ $video->updated_at  }}</td>
-                                            <td><a href="{{ url('videos/' . $video->slug . '/edit') }}"><i class="fa fa-edit"></i></a></td>
+                                            <td><a href="{{ url('videos/' . $video->slug . '/edit') }}"><i
+                                                            class="fa fa-edit"></i></a></td>
                                             <td>
                                                 <i class="fa fa-trash"></i>
                                             </td>
@@ -138,7 +172,7 @@
                         @endif
                     </div>
                     <div class="panel-footer text-center">
-                    	{{ $videos->links() }}
+                        {{ $videos->links() }}
                     </div>
                 </div>
 
