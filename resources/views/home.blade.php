@@ -158,7 +158,44 @@
                                             <td><a href="{{ url('videos/' . $video->slug . '/edit') }}"><i
                                                             class="fa fa-edit"></i></a></td>
                                             <td>
-                                                <i class="fa fa-trash"></i>
+
+                                                <a class="btn btn-danger" data-toggle="modal"
+                                                   href='#{{ $video->id }}'><i class="fa fa-trash"></i></a>
+                                                <div class="modal fade" id="{{ $video->id }}">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-hidden="true">&times;</button>
+                                                                <h4 class="modal-title">
+                                                                    Deleting {{ $video->title }}</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h3>Are you sure that you want to
+                                                                    delete {{ $video->title }} ?</h3>
+                                                                <p>
+                                                                    This video will be lost forever.
+                                                                </p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <form action="{{ url('videos/'.$video->id) }}"
+                                                                      method="POST">
+                                                                    {{ csrf_field() }}
+                                                                    {{ method_field('DELETE') }}
+
+                                                                    <button type="button" class="btn btn-default"
+                                                                            data-dismiss="modal">Cancel
+                                                                    </button>
+                                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                                        <i class="fa fa-btn fa-trash"></i> Delete
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
                                             </td>
                                         </tr>
                                     @endforeach

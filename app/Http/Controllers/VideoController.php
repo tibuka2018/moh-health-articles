@@ -112,6 +112,10 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $video = Video::findOrFail($id);
+
+        $video->delete();
+
+        return redirect('home');
     }
 }
