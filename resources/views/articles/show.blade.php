@@ -24,8 +24,8 @@
 						{{--
 							TODO: provide a callback image
 						--}}
-						<div class="article-img" style="background-image: url('http://lorempixel.com/800/600/nature/?25199')">
-						</div>						
+{{-- 						<div class="article-img" style="background-image: url('http://lorempixel.com/800/600/nature/?25199')">
+						</div>	 --}}					
 					@endif
 
     				{{-- Content --}}
