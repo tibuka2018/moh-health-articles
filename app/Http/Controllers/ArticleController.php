@@ -33,7 +33,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::with(['user', 'images', 'sections'])->paginate(6);
+        $articles = Article::orderBy('created_at', 'desc')->with(['user', 'images', 'sections'])->paginate(20);
         return view('articles.index', compact('articles'));
     }
 

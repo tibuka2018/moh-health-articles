@@ -14,7 +14,7 @@ use App\Article;
 */
 
 Route::get('/', function () {
-	$articles = Article::with(['user', 'images', 'sections'])->orderBy('created_at', 'desc')->paginate(6);
+	$articles = Article::with(['user', 'images', 'sections'])->orderBy('created_at', 'desc')->paginate(12);
 	// TODO View composers
 	$latest_articles = Article::with('user')->orderBy('created_at', 'desc')->take(5)->get();
     return view('welcome', compact('articles', 'latest_articles'));
