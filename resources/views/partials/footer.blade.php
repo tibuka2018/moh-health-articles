@@ -37,12 +37,12 @@
 			<p>
 				Subscribe to our weekly newsletter.
 			</p>
-			<form role="form">
+			<form action="#" method="POST" role="form">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Email Address" name="email">
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+					<button type="button" class="btn btn-primary btn-block">Subscribe</button>
 				</div>
 			</form>
 		</div>

@@ -7,27 +7,27 @@
 	<div class="carousel-inner">
 		<div class="item">
 			<img alt="First slide" src="/img/pg_1.jpg">
-			<div class="container">
+{{-- 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Example headline.</h1>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 		<div class="item">
 			<img alt="Second slide" src="img/pg_2.jpg">
-			<div class="container">
+{{-- 			<div class="container">
 				<div class="carousel-caption">
 					<h1>Another example headline.</h1>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 		<div class="item active">
 			<img alt="Third slide" src="img/pg_3.jpg">
-			<div class="container">
+{{-- 			<div class="container">
 				<div class="carousel-caption">
 					<h1>One more for good measure.</h1>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
