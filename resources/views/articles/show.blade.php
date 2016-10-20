@@ -45,7 +45,7 @@
 								<h3>Contents</h3>
 								<ul>
 									@foreach($article->sections as $section)
-										<li><a href="#{{ $section->slug }}">{{ $section->title }}</a></li>
+										<li><a href="#{{ $section->slug }}">{!! $section->title !!}</a></li>
 									@endforeach
 								</ul>
 							@else
@@ -56,7 +56,7 @@
 						@if($article->sections->count() > 0)
 							@foreach($article->sections as $section)
 								<section id="{{ $section->slug }}">
-									<h2>{{ $section->title }}</h2>
+									<h2>{!! $section->title !!}</h2>
 									@if($section->images->count() > 0)
 										@foreach($section->images as $image)
 											<a href="{{ url('images/' . $image->url) }}">
@@ -65,7 +65,7 @@
 										@endforeach
 									@endif
 									<p>
-										{{ $section->content }} 
+										{!! $section->content !!} 
 									</p>
 								</section>
 							@endforeach
