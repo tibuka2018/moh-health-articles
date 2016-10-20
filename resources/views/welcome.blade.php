@@ -16,7 +16,9 @@
 			<div class="row">
 				{{-- Articles --}}
 				<div class="col-xs-12 col-sm-9">
-					
+					<div class="page-header">
+					  <h1 class="text-center">Articles</h1>
+					</div>
 				@if($articles->count() > 0)
 					@foreach($articles->chunk(3) as $articlesSet)
 						<div class="row">

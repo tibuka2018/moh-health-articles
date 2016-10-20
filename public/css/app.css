@@ -77,8 +77,7 @@ footer {
   .article-single .content section p {
     text-align: justify;
     padding: 5px;
-    font-size: 18px;
-    color: grey;
+    color: #686868;
     text-indent: 50px; }
   .article-single .content section .section-img {
     height: 200px; }
