@@ -24,7 +24,10 @@
 			}
 		}
 		section {
-			padding: 4em;
+			padding : {
+				left: 4em;
+				right: 4em;
+			};
 			h2 {
 				color: #333;
 			}
