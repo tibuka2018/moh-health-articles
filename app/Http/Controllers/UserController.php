@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -43,7 +43,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User();
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->password = bcrypt($request->input('email'));
+        $user->is_admin = false;
+        $user->save();
+
+        return redirect('users');
     }
 
     /**

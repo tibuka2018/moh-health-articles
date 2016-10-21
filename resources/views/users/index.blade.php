@@ -16,6 +16,9 @@
     	<div class="row">
     		<div class="col-sm-12">
     			<h1>Manage users</h1>
+    			<div class="pull-right">
+    				<a href="{{ url('users/create') }}" class="btn btn-primary">Add</a>
+    			</div>
     			<div class="panel panel-primary">
     				<div class="panel-heading">
     					<h3 class="panel-title">Users</h3>
