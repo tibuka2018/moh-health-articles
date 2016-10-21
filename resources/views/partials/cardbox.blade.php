@@ -5,7 +5,7 @@
                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                   <div class="panel panel-success">
                      <div class="panel-heading" role="tab" id="section">
-                        <h4 class="panel-title"><a title="{{ $article->title }}" href="#collapse{{ $article->id }}" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">{{ str_limit($article->title, 20) }}</a></h4>
+                        <h4 class="panel-title"><a title="{{ $article->title }}" href="#collapse{{ $article->id }}" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">{{ str_limit($article->title, 15) }}</a></h4>
                      </div>
                      <div id="collapse{{ $article->id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                         <div class="panel-body">
