@@ -21,6 +21,9 @@
     					<h3 class="panel-title">#</h3>
     				</div>
     				<div class="panel-body">
+
+                        @include('errors.list')
+
     					<form action="{{ url('users') }}" method="POST" class="form-horizontal" role="form">
     							{!! csrf_field() !!}
 
@@ -33,6 +36,7 @@
     							</div>
     					</form>
     				</div>
+                    <div class="panel-footer"><a href="{{ url('users') }}" class="btn btn-primary">See all</a></div>
     			</div>
     		</div>
     	</div>

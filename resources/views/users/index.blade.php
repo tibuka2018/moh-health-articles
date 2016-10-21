@@ -16,9 +16,6 @@
     	<div class="row">
     		<div class="col-sm-12">
     			<h1>Manage users</h1>
-    			<div class="pull-right">
-    				<a href="{{ url('users/create') }}" class="btn btn-primary">Add</a>
-    			</div>
     			<div class="panel panel-primary">
     				<div class="panel-heading">
     					<h3 class="panel-title">Users</h3>
@@ -64,6 +61,9 @@
     					@else
 							<h1 class="text-center">Empty</h1>
     					@endif
+    				</div>
+    				<div class="panel-footer">
+    					<a href="{{ url('users/create') }}" class="btn btn-primary">Add</a>
     				</div>
     			</div>
     		</div>
