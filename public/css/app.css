@@ -72,15 +72,15 @@ footer {
     width: 100%; }
   .article-single .content .table-of-contents ul li a {
     font-size: 18px; }
-  .article-single .content section h2 {
-    color: #333; }
-  .article-single .content section p {
-    text-align: justify;
-    padding: 5px;
-    color: #686868;
-    text-indent: 50px; }
-  .article-single .content section .section-img {
-    height: 200px; }
+  .article-single .content section {
+    padding: 4em; }
+    .article-single .content section h2 {
+      color: #333; }
+    .article-single .content section p {
+      text-align: justify;
+      color: #686868; }
+    .article-single .content section .section-img {
+      height: 200px; }
 
 .login {
   padding-top: 5em;

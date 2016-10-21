@@ -12,9 +12,13 @@
     		<div class="col-xs-12 col-sm-9">
 
     			<article class="article-single">
+
+    				<div class="content">
+    					<section>
 					{{-- image --}}
 					@if($article->images->count() > 0)
 						@foreach($article->images as $image)
+							<h2>{{ $article->title }}</h2>
 							<a href="{{ url('images/' . $image->url) }}">
 								<img src="{{ url('images/' . $image->url) }}" class="img-responsive" alt="{{ $article->title }}">
 							</a>
@@ -26,20 +30,26 @@
 						--}}
 {{-- 						<div class="article-img" style="background-image: url('http://lorempixel.com/800/600/nature/?25199')">
 						</div>	 --}}					
-					@endif
+					@endif    						
+    					</section>
+    				</div>
 
     				{{-- Content --}}
     				<div class="content">
+						
+						<section>
     					<header class="article-header">
     						{{-- Title --}}
-    						<h5>{{ $article->title }}</h5>
+    						<h3>{{ $article->title }}</h3>
 
     						{{-- byline --}}
     						<div class="byline">
     							Writen by {{ $article->user->name }}
     						</div>
-    					</header>
+    					</header>							
+						</section>
 
+						<section>
 						<div class="table-of-contents">
 							@if($article->sections->count() > 0)
 								<h5>Contents</h5>
@@ -51,7 +61,8 @@
 							@else
 								<p class="lead">This article has no content yet.</p>	
 							@endif
-						</div>
+						</div>							
+						</section>
 
 						@if($article->sections->count() > 0)
 							@foreach($article->sections as $section)
