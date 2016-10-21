@@ -57,3 +57,5 @@ Route::get('images/{filename}', function ($filename)
 });
 
 Route::resource('videos', 'VideoController');
+
+Route::resource('users', 'UserController');
