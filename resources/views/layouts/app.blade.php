@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link href="/twbs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/summernote/summernote.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -31,6 +32,12 @@
     <!-- Scripts -->
     <script src="/jquery/jquery.min.js"></script>
     <script src="/twbs/js/bootstrap.min.js"></script>
+    <script src="/summernote/summernote.min.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#summernote').summernote();
+        });
+    </script>
 </body>
 </html>
