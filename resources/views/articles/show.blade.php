@@ -68,6 +68,9 @@
 							@foreach($article->sections as $section)
 								<section id="{{ $section->slug }}">
 									<h5>{!! $section->title !!}</h5>
+									<p>
+										{!! $section->content !!} 
+									</p>									
 									@if($section->images->count() > 0)
 										@foreach($section->images as $image)
 											<a href="{{ url('images/' . $image->url) }}">
@@ -75,9 +78,6 @@
 											</a>
 										@endforeach
 									@endif
-									<p>
-										{!! $section->content !!} 
-									</p>
 								</section>
 							@endforeach
 						@endif
