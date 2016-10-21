@@ -1,9 +1,9 @@
-<div class="panel panel-default">
+<div class="panel panel-info">
    <div class="panel-body">
      {{-- Sections --}}
       @if($article->sections->count() > 0)
                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                  <div class="panel panel-default">
+                  <div class="panel panel-success">
                      <div class="panel-heading" role="tab" id="section">
                         <h4 class="panel-title"><a title="{{ $article->title }}" href="#collapse{{ $article->id }}" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">{{ str_limit($article->title, 20) }}</a></h4>
                      </div>
