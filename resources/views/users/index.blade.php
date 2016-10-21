@@ -43,7 +43,7 @@
 												<td>{{ $user->name }}</td>
 												<td>{{ $user->email }}</td>
 												<td>
-													@if($user->is_admin == true)
+													@if($user->is_admin)
 														Yes
 													@else
 														No
