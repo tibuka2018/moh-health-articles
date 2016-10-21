@@ -32,7 +32,7 @@
     				<div class="content">
     					<header class="article-header">
     						{{-- Title --}}
-    						<h1>{{ $article->title }}</h1>
+    						<h5>{{ $article->title }}</h5>
 
     						{{-- byline --}}
     						<div class="byline">
@@ -42,7 +42,7 @@
 
 						<div class="table-of-contents">
 							@if($article->sections->count() > 0)
-								<h3>Contents</h3>
+								<h5>Contents</h5>
 								<ul>
 									@foreach($article->sections as $section)
 										<li><a href="#{{ $section->slug }}">{!! $section->title !!}</a></li>
@@ -56,7 +56,7 @@
 						@if($article->sections->count() > 0)
 							@foreach($article->sections as $section)
 								<section id="{{ $section->slug }}">
-									<h2>{!! $section->title !!}</h2>
+									<h5>{!! $section->title !!}</h5>
 									@if($section->images->count() > 0)
 										@foreach($section->images as $image)
 											<a href="{{ url('images/' . $image->url) }}">
@@ -81,7 +81,7 @@
 					<div class="side-bar">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Latest Articles</h3>
+								<h3 class="panel-title">Latest Articles</h5>
 							</div>
 							<div class="panel-body">
 								@each('partials.sidebar', $latest_articles, 'latest_articles')
