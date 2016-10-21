@@ -14,7 +14,8 @@
     <title>@if(Request::is('/')) {{ config('app.name') }} @endif @yield('title')</title>
 
     <!-- Styles -->
-    <link href="/twbs/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" integrity="sha384-Li5uVfY2bSkD3WQyiHX8tJd0aMF91rMrQP5aAewFkHkVSTT2TmD2PehZeMmm7aiL" crossorigin="anonymous">    
+    {{-- <link href="/twbs/css/bootstrap.min.css" rel="stylesheet"> --}}
     <link href="/summernote/summernote.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
 
