@@ -51,7 +51,7 @@
 												</td>
 												<td>{{ $user->created_at->diffForHumans() }}</td>
 												<td>{{ $user->updated_at->diffForHumans() }}</td>
-												<td><a href="#"><i class="fa fa-edit"></i></a></td>
+												<td><a href="{{ url('users/' . $user->id . '/edit') }}"><i class="fa fa-edit"></i></a></td>
 												<td><a href="#"><i class="fa fa-trash"></i></a></td>
 											</tr>
 										@endforeach
