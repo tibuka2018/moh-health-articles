@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <title>@if(Request::is('/')) {{ config('app.name') }} @endif @yield('title')</title>
