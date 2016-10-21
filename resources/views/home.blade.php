@@ -213,6 +213,17 @@
                     </div>
                 </div>
 
+                @if(Auth::user()->is_admin)
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Users</h3>
+                        </div>
+                        <div class="panel-body">
+                            <a href="{{ url('users') }}" class="btn btn-success btn-lg">Manage Users</a>
+                        </div>
+                    </div>
+                @endif
+
             </div>
         </div>
     </div>
