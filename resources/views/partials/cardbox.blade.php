@@ -22,10 +22,10 @@
                </div>
                <div class="row">
                   <div class="col-sm-6 text-left">
-                     {{ $article->created_at->diffForHumans() }}
+                     <small>{{ $article->created_at->diffForHumans() }}</small>
                   </div>
-                  <div class="col-sm-6 text-right">
-                     {{ $article->category->name }}
+                  <div class="col-sm-6 text-left">
+                     <small>{{ $article->category->name }}</small>
                   </div>
                </div>        
       @endif
